@@ -49,10 +49,21 @@ const App = () => {
     console.log("delete", id);
   };
 
+  const toggleReminder = (id) => {
+    setTasks(
+      tasks.map(
+        (task) =>
+          // console.log(task.reminder);
+          task.id === id ? { ...task, reminder: !task.reminder } : task
+        // console.log(task.reminder);
+      )
+    );
+  };
+
   return (
     <div className="container">
       <Header />
-      <Tasks tasks={tasks} onDelete={deleteTask} />
+      <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
     </div>
   );
 };
