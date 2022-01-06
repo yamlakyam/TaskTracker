@@ -1,7 +1,6 @@
-
-import React from 'react'
-import Header from './components/Header';
-
+import React from "react";
+import Header from "./components/Header";
+import Tasks from "./components/Tasks";
 
 // function App() {
 //   return (
@@ -22,16 +21,14 @@ class App extends React.Component{
 
 */
 
-const App = ()=>{
-  return(
-    <div className='container'>
+const App = () => {
+  return (
+    <div className="container">
       {/* <Header title={1}/> */}
       <Header />
-
+      <Tasks />
     </div>
-  )
-}
-
-
+  );
+};
 
 export default App;
