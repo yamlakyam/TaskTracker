@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import { useState } from "react";
 
-
 // function App() {
 //   return (
 //     <div className='App'>
@@ -24,7 +23,6 @@ class App extends React.Component{
 */
 
 const App = () => {
-
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -47,14 +45,14 @@ const App = () => {
   ]);
 
   const deleteTask = (id) => {
-    console.log('delete',id)
+    setTasks(tasks.filter((task) => task.id !== id));
+    console.log("delete", id);
   };
 
   return (
     <div className="container">
-
       <Header />
-      <Tasks tasks={tasks} onDelete={deleteTask}/>
+      <Tasks tasks={tasks} onDelete={deleteTask} />
     </div>
   );
 };
