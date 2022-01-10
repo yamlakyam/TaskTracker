@@ -25,6 +25,7 @@ class App extends React.Component{
 */
 
 const App = () => {
+  const [showAddTask, setShowAddTask] = useState(false);
   const [tasks, setTasks] = useState([
     {
       id: 1,
@@ -52,7 +53,7 @@ const App = () => {
     console.log(id);
 
     const newTask = { id, ...task };
-    setTasks([...tasks, newTask])
+    setTasks([...tasks, newTask]);
     // console.log(task);
   };
 
@@ -75,7 +76,7 @@ const App = () => {
   return (
     <div className="container">
       <Header />
-      <AddTask onAdd={addTask} />
+      {showAddTask && <AddTask onAdd={addTask} />}
       <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
     </div>
   );
